@@ -1,4 +1,4 @@
-var movie = React.createClass({
+var Movie = React.createClass({
     render: function() {
         [
             {
@@ -29,31 +29,20 @@ var movie = React.createClass({
     }
 });
 
-var movie = React.createClass({
+var Movie = React.createClass({
     propTypes: {
-        movie: React.PropTypes.object.isRequired,
+        movieId: React.PropTypes.object.isRequired,
+        movieTitle: React.PropTypes.name.isRequired,
+        movieDesc: React.PropTypes.string.isRequired,
+        movieImage: React.PropTypes.object.isRequired
     },
 
     render: function() {
         return (
-            React.createElement('li', {key: movie.id},
-            React.createElement('h2', {}, this.props.movie.title),
-            React.createElement('p', {}, this.props.movie.desc),
-            React.createElement('img', {src: this.props.movie.src, this.props.alt: movie.title}),
-        )
-    )},
-});
-
-var GalleryItem = React.createClass({
-    propTypes: {
-        movie: React.PropTypes.object.isRequired,
-    },
-
-    render: function() {
-        return (
-            React.createElement('div', {},
-            React.createElement('h2', {}, this.props.image.name),
-            React.createElement('img', {src: this.props.image.src})
+            React.createElement(Movie 'li', {key: movieId},
+            React.createElement(Movie 'h2', {}, this.props.movietTitle),
+            React.createElement(Movie 'p', {}, this.props.movieDesc),
+            React.createElement(Movie 'img', {src: this.props.movieImage, alt: this.props.movie.title}),
         )
     )},
 });
@@ -61,7 +50,8 @@ var GalleryItem = React.createClass({
 var element =
 React.createElement('div', {},
     React.createElement('h1', {}, 'Lista filmów'),
-    React.createElement('ul', {}, moviesElements),
+    React.createElement('ul', {}, movie),
 );
+
 
 ReactDOM.render(element, document.getElementById('app'));
