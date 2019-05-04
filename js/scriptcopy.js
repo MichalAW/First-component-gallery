@@ -1,4 +1,7 @@
 var Movie = React.createClass({
+    propTypes: {
+        title: React.PropTypes.string.isRequired,
+    },
     render: function() {
         [
             {
@@ -26,29 +29,40 @@ var Movie = React.createClass({
                 src: './images/game.jpg'
             }
         ];
-    }
-});
-
-var Movie = React.createClass({
-    propTypes: {
-        movie: React.PropTypes.object.isRequired,
-    },
-    render() {
-
         var movie = this.props.movie;
 
         return React.createElement('li', {},
-                React.createElement(MovieTitle, {title: movie.title}),
-                React.createElement(MovieDesc, {desc: movie.desc}),
-                React.createElement(MovieSrc, {src: movie.src})
+            React.createElement(MovieTitle, {
+                title: movie.title
+            }),
+            React.createElement(MovieDesc, {
+                desc: movie.desc
+            }),
+            React.createElement(MovieSrc, {
+                src: movie.src
+            })
         );
     }
 });
 
+// var Movie = React.createClass({
+//     propTypes: {
+//         movie: React.PropTypes.object.isRequired,
+//     },
+//     render() {
+
+//         var movie = this.props.movie;
+
+//         return React.createElement('li', {},
+//                 React.createElement(MovieTitle, {title: movie.title}),
+//                 React.createElement(MovieDesc, {desc: movie.desc}),
+//                 React.createElement(MovieSrc, {src: movie.src})
+//         );
+//     }
+// });
+
 var MovieTitle = React.createClass({
-    propTypes: {
-        title: React.PropTypes.string.isRequired,
-    },
+
     render: function() {
         return (
             React.createElement('h2', {}, this.props.title)
