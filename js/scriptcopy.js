@@ -31,58 +31,55 @@ var Movie = React.createClass({
 
 var Movie = React.createClass({
     propTypes: {
-        movieId: React.PropTypes.object.isRequired,
+        movie: React.PropTypes.object.isRequired,
     },
+    render() {
 
-    render: function() {
-        return (
-            React.createElement(Movie 'li', {key: movieId}
-            );
-        )
+        var movie = this.props.movie;
+
+        return React.createElement('li', {},
+                React.createElement(MovieTitle, {title: movie.title}),
+                React.createElement(MovieDesc, {desc: movie.desc}),
+                React.createElement(MovieSrc, {src: movie.src})
+        );
     }
 });
 
 var MovieTitle = React.createClass({
-    propTypes {
-        movieTitle: React.PropTypes.name.isRequired;
-    }
+    propTypes: {
+        title: React.PropTypes.string.isRequired,
+    },
+    render: function() {
+        return (
+            React.createElement('h2', {}, this.props.title)
+        )
+    },
+});
+
+var MovieDescription = React.createClass({
+    propTypes: {
+        desc: React.PropTypes.string.isRequired,
+    },
 
     render: function() {
         return (
-            React.createElement(Movie 'h2', {}, this.props.movieTitle);
+           React.createElement('p', {}, this.props.desc)
+        )
+    },
+})
+
+var MoviesList = React.createClass({
+    propTypes: {
+        element: React.PropTypes.object.isRequired,
+    },
+    
+    render: function() {
+        return React.createElement('div', {},
+                React.createElement('h1', {}, 'Lista filmów', this.props.element),
+                React.createElement('ul', {}, movie.this.props.element)
         )
     }
 });
 
-var MovieDescription = React.createClass({
-    propTypes {
-        movieDesc: React.PropTypes.string.isRequired;
-    }
-
-    render: function () {
-        return (
-            React.createElement(Movie 'p', {}, this.props.movieDesc);
-        )
-    }
-})
-
-var MoviesList = React.createClass({
-    propTypes {
-        movieImage: React.PropTypes.object.isRequired;
-    }
-
-    render: function () {
-        return (
-            React.createElement(Movie 'img', {src: this.props.movieImage, alt: this.props.movie.title});
-        )
-    }
-})
-
-var element =
-React.createElement('div', {},
-    React.createElement('h1', {}, 'Lista filmów'),
-    React.createElement('ul', {}, movie),
-);
-
-
+var element =React.createElement(MoviesList);
 ReactDOM.render(element, document.getElementById('app'));
