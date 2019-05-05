@@ -32,11 +32,13 @@ var Movie = React.createClass({
     },
 
     render() {
+
         var movie = this.props.movie;
+
         return React.createElement('li', {},
-                React.createElement(MovieTitle, {title: movies.title}),
-                React.createElement(MovieDesc, {desc: movies.desc}),
-                React.createElement(MovieSrc, {src: movies.src})
+                React.createElement(MovieTitle, {title: movie.title}),
+                React.createElement(MovieDesc, {desc: movie.desc}),
+                React.createElement(MovieSrc, {src: movie.src})
         );
     }
 });
