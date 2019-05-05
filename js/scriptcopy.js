@@ -1,33 +1,29 @@
-var movies = React.createClass({
-    render: function() {
-        [
-            {
-                id: 1,
-                title: 'Harry Potter',
-                desc: 'film o czarodzieju',
-                src: './images/potter.jpg'
-            },
-            {
-                id: 2,
-                title: 'Król Lew',
-                desc: 'Film o królu sawanny',
-                src: './images/lion.jpg'
-            },
-            {
-                id: 3,
-                title: 'Władca Pierścieni',
-                desc: 'film o władcy pierścieni',
-                src: './images/lord.jpg'
-            },
-            {
-                id: 4,
-                title: 'Gra o tron',
-                desc: 'Film o królewskich rodach',
-                src: './images/game.jpg'
-            }
-        ];
+var movies = [
+    {
+        id: 1,
+        title: 'Harry Potter',
+        desc: 'film o czarodzieju',
+        src: './images/potter.jpg'
+    },
+    {
+        id: 2,
+        title: 'Król Lew',
+        desc: 'Film o królu sawanny',
+        src: './images/lion.jpg'
+    },
+    {
+        id: 3,
+        title: 'Władca Pierścieni',
+        desc: 'film o władcy pierścieni',
+        src: './images/lord.jpg'
+    },
+    {
+        id: 4,
+        title: 'Gra o tron',
+        desc: 'Film o królewskich rodach',
+        src: './images/game.jpg'
     }
-});
+];
 
 var Movie = React.createClass({
     propTypes: {
@@ -65,10 +61,6 @@ var MovieDescription = React.createClass({
     },
 })
 
-var moviesElements = movies.map(function (movie) {
-    return React.createElement(Movie, { key: movie.id,movie: movie})
-});
-
 var MoviesList = React.createClass({
     render: function() {
         return React.createElement('div', {},
@@ -76,6 +68,10 @@ var MoviesList = React.createClass({
             React.createElement('ul', {}, moviesElements)
         )
     }
+});
+
+var moviesElements = movies.map(function (movie) {
+    return React.createElement(Movie, {key: movie.id,movie: movie})
 });
 
 var element =React.createElement(MoviesList);
