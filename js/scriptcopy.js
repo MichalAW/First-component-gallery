@@ -42,7 +42,7 @@ var Movie = React.createClass({
 
 var MovieTitle = React.createClass({
     propTypes: {
-        title: React.PropTypes.string
+        title: React.PropTypes.string,
     },
     render() {
         return (
@@ -65,7 +65,7 @@ var MovieDesc = React.createClass({
 
 var MovieSrc = React.createClass({
     propTypes: {
-        images: React.PropTypes.object
+        images: React.PropTypes.string,
     },
     render() {
         return (
