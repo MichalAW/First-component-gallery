@@ -56,7 +56,7 @@ var MovieDesc = React.createClass({
         desc: React.PropTypes.string,
     },
 
-    render: function() {
+    render() {
         return (
            React.createElement('p', {}, this.props.desc)
         )
@@ -75,7 +75,7 @@ var MovieSrc = React.createClass({
 });
 
 var MoviesList = React.createClass({
-    render: function() {
+    render() {
         return React.createElement('div', {},
                 React.createElement('h1', {}, 'Lista filmów'),
             React.createElement('ul', {}, moviesElements)
