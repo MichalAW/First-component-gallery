@@ -65,11 +65,11 @@ var MovieDesc = React.createClass({
 
 var MovieSrc = React.createClass({
     propTypes: {
-        images: React.PropTypes.string,
+        src: React.PropTypes.string
     },
     render() {
         return (
-            React.createElement('img', {}, this.props.images)
+            React.createElement('img', {src: this.props.src, width: "250px", height: "300px"})
         )
     },
 });
