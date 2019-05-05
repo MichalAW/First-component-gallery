@@ -65,12 +65,8 @@ var MovieDescription = React.createClass({
     },
 })
 
-var moviesElements = movies.map(function (movies) {
-    return React.createElement('li', {key: movies.id},
-        React.createElement('h2', {}, movies.title),
-        React.createElement('p', {}, movies.desc),
-        React.createElement('img', {src: movies.src, alt: movies.title}),
-    );
+var moviesElements = movies.map(function (movie) {
+    return React.createElement(Movie, { key: movie.id,movie: movie})
 });
 
 var MoviesList = React.createClass({
