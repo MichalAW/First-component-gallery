@@ -77,7 +77,7 @@ var MoviesList = React.createClass({
     render: function() {
         return React.createElement('div', {},
                 React.createElement('h1', {}, 'Lista filmów'),
-            React.createElement('ul', {}, movie.moviesElements)
+            React.createElement('ul', {}, moviesElements)
         )
     }
 });
