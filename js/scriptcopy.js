@@ -69,7 +69,7 @@ var MovieSrc = React.createClass({
     },
     render() {
         return (
-            React.createElement('img', {}, this.props.title)
+            React.createElement('img', {}, this.props.images)
         )
     },
 });
