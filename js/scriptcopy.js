@@ -26,8 +26,9 @@ var movies = [
 ];
 
 var Movie = React.createClass({
+
     propTypes: {
-        movie: React.PropTypes.object,
+        movie: React.PropTypes.object.isRequired,
     },
 
     render() {
