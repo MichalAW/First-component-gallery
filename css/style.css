@@ -1,9 +1,25 @@
-body { background-color: #00FFFF; text-align: center; }
+body {
+  background-color: #00FFFF;
+  text-align: center;
+}
 
-h1 { text-align: center; }
+h1 {
+  text-align: center;
+}
 
-h2 { font-size: 20px; }
+h2 {
+  font-size: 20px;
+}
 
-ul { padding: 0 0 0 20px; margin: 0; list-style: none; }
+ul {
+  padding: 0 0 0 20px;
+  margin: 0;
+  list-style: none;
+}
 
-img { width: 250px; height: 300px; }
+img {
+  width: 250px;
+  height: 300px;
+}
+
+/*# sourceMappingURL=style.css.map */
